@@ -50,10 +50,5 @@ namespace DrinkStores.Models
                 context.SaveChanges();
             }
         }
-
-        internal static void EnsurePopulated(object app)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

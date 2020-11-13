@@ -1,0 +1,143 @@
+           ------------DrinkStores --------------
+
+*B1: Tạo project MVC - Model-View-Controller(ASP.NET Core Web Application)
+
+*B2:Sửa cổng: Project/DrinkStores Properties/Debug/Sửa cổng - bỏ tích Enable SSL
+
+*B3: Sửa Layout_.cshtml
+
+*B4: Xóa hết HomeController và viết lại
+public class HomeController : Controller
+    {
+        public IActionResult Index() => View();
+    }
+
+*B5: Sửa tệp Index.cshtml
+eg:  <h4>Welcome to Drink Stores</h4>
+
+*B6: Models: thêm new class: Product.cs:
+public class Product
+    {
+        public long Id { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public string Img { get; set; }
+
+        [Column(TypeName = "decimal(8,2)")]
+        public decimal Price { get; set; }
+        public double Discount { get; set; }
+        public string Status { get; set; }
+    }
+
+*B7: Tools/ NuGet Package Manager/ Package Manager Console:
+dotnet add DrinkStores package Microsoft.EntityFrameworkCore.Design
+dotnet add DrinkStores package Microsoft.EntityFrameworkCore.SqlServer
+dotnet tool install --global dotnet-ef
+
+*B8:Kết nối database: appsettings.json:
+"ConnectionStrings": {
+    "DrinkStoresConnection":  "Server=(localdb)\\MSSQLocalDB; Database=DrinkStores; MultipleActiveResultSets=true"
+ }
+
+*B9: Models: thêm new StoreDbContext.cs
+using Microsoft.EntityFrameworkCore;
+
+    public class StoreDbContext: DbContext
+    {
+        public StoreDbContext(DbContextOptions<StoreDbContext> options): base(options) { }
+        public DbSet<Product> Products { get; set; }
+    }
+
+*B10: Startup: sửa Config:
+using DrinkStores.Models;
+using Microsoft.EntityFrameworkCore;
+
+public IConfiguration Configuration { get; set; }
+public void ConfigureServices(IServiceCollection services)
+        {
+            services.AddControllersWithViews();
+            services.AddDbContext<StoreDbContext>(
+                opts =>
+                {
+                    opts.UseSqlServer(Configuration["ConnectionStrings:DrinkStoresConnection"]);
+                });
+        }
+
+*B11:Models tạo interface: IStoreRepository.cs
+public interface IStoreRepository
+    {
+        IQueryable<Product> Products { get; }
+    }
+
+*B12: Models tạo class: EFStoreResposity.cs
+public class EFStoreResposity: IStoreRepository
+    {
+        private StoreDbContext context;
+        public EFStoreResposity(StoreDbContext ctx)
+        {
+            context = ctx;
+        }
+        public IQueryable<Product> Products => context.Products;
+    }
+
+*B13:Startup.cs:
+trong :public void ConfigureServices(IServiceCollection services) thêm
+services.AddScoped<I<tên>Repository, EFStoreResposity>();
+
+B14:Tools/ NuGet Package Manager/ Package Manager Console:
+dotnet ef migrations add --project DrinkStores Initial
+
+B15: Models tạo class SeedData.cs:
+using System.Linq;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
+
+public class SeedData
+    {
+        public static void EnsurePopulated(IApplicationBuilder app)
+        {
+            StoreDbContext context = app.ApplicationServices.CreateScope().ServiceProvider.GetRequiredService<StoreDbContext>();
+            if (context.Database.GetAppliedMigrations().Any())
+            {
+                context.Database.Migrate();
+            }
+
+            if (context.Products.Any())
+            {
+                new Product
+                     {
+                         Name = "Milk 100%",
+                         Description = "Good Housekeeping:Goat Milk Nutrition - Health Benefits of Goat Milk",
+                         Img = "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/health-benefits-of-goat-milk-1586900792.jpg?crop=0.668xw:1.00xh;0.259xw,0&resize=480:*",
+                         Price = 45.32m,
+                         Discount = 2.5,
+                         Status = "stocking"
+                     },
+                     new Product
+                     {
+                         Name = "Coca cola",
+                         Description = "Nước ngọt Coca Cola 320ml",
+                         Img = "https://cdn.tgdd.vn/Products/Images/2443/76451/bhx/nuoc-ngot-coca-cola-330ml-201912091400292591.jpg",
+                         Price = 25.80m,
+                         Discount = 1.0,
+                         Status = "stocking"
+                     },
+                     new Product
+                     {
+                         Name = "Orange juice",
+                         Description = "Fresh Squeezed Orange Juice",
+                         Img = "https://www.earthfoodandfire.com/wp-content/uploads/2018/04/Homemade-Orange-Juice.jpg",
+                         Price = 48.90m,
+                         Discount = 5.0,
+                         Status = "out of stock"
+                     }
+                context.SaveChanges();
+            }
+        }
+    }
+
+B16: Startup.cs:
+trong :public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+thêm
+SeedData.EnsurePopulated(app);
