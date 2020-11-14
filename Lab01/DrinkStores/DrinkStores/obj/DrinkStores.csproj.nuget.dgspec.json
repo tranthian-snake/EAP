@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Visual Studio 2019\\EAP\\DrinkStores\\DrinkStores\\DrinkStores.csproj": {}
+    "D:\\Visual Studio 2019\\EAP\\EAP\\Lab01\\DrinkStores\\DrinkStores\\DrinkStores.csproj": {}
   },
   "projects": {
-    "D:\\Visual Studio 2019\\EAP\\DrinkStores\\DrinkStores\\DrinkStores.csproj": {
+    "D:\\Visual Studio 2019\\EAP\\EAP\\Lab01\\DrinkStores\\DrinkStores\\DrinkStores.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Visual Studio 2019\\EAP\\DrinkStores\\DrinkStores\\DrinkStores.csproj",
+        "projectUniqueName": "D:\\Visual Studio 2019\\EAP\\EAP\\Lab01\\DrinkStores\\DrinkStores\\DrinkStores.csproj",
         "projectName": "DrinkStores",
-        "projectPath": "D:\\Visual Studio 2019\\EAP\\DrinkStores\\DrinkStores\\DrinkStores.csproj",
+        "projectPath": "D:\\Visual Studio 2019\\EAP\\EAP\\Lab01\\DrinkStores\\DrinkStores\\DrinkStores.csproj",
         "packagesPath": "C:\\Users\\Tran Thi An\\.nuget\\packages\\",
-        "outputPath": "D:\\Visual Studio 2019\\EAP\\DrinkStores\\DrinkStores\\obj\\",
+        "outputPath": "D:\\Visual Studio 2019\\EAP\\EAP\\Lab01\\DrinkStores\\DrinkStores\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Tran Thi An\\AppData\\Roaming\\NuGet\\NuGet.Config",

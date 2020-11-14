@@ -16,7 +16,7 @@ namespace DrinkStores.Models
                 context.Database.Migrate();
             }
 
-            if (context.Products.Any())
+            if (!context.Products.Any())
             {
                 context.Products.AddRange(
                      new Product
