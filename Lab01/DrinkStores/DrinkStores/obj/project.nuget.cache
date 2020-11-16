@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "c5rdgkRKRFzdtWu/ABS9pj37gNAn7VkCRG2CUUt9lAitJEEqQPGFuKV1zfXtpv2/G0T+93/XSklGgDVeOOwPcA==",
+  "dgSpecHash": "O16nCHC8OSJt3BngtXOIdYYWCr8v9XcLZ0VnDz2cRk5hhDKaDFAdBy7jXXjHKSr3n7KSpaoHmuH4JoKp0gXhhw==",
   "success": true,
-  "projectFilePath": "D:\\Visual Studio 2019\\EAP\\EAP\\Lab01\\DrinkStores\\DrinkStores\\DrinkStores.csproj",
+  "projectFilePath": "C:\\Users\\Tran Thi An\\Downloads\\Lab01\\DrinkStores\\DrinkStores\\DrinkStores.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Tran Thi An\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Tran Thi An\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
