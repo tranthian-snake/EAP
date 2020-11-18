@@ -1,8 +1,10 @@
-﻿using System.Linq;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
-using System;
+using System.Threading.Tasks;
 
 namespace DrinkStores.Models
 {
@@ -10,8 +12,9 @@ namespace DrinkStores.Models
     {
         public static void EnsurePopulated(IApplicationBuilder app)
         {
-            StoreDbContext context = app.ApplicationServices.CreateScope().ServiceProvider.GetRequiredService<StoreDbContext>();
-            if (context.Database.GetAppliedMigrations().Any())
+            StoreDbContext context = app.ApplicationServices
+                .CreateScope().ServiceProvider.GetRequiredService<StoreDbContext>();
+            if (context.Database.GetPendingMigrations().Any())
             {
                 context.Database.Migrate();
             }

@@ -17,7 +17,6 @@ namespace DrinkStores.Controllers
         {
             repository = repo;
         }
-        public IActionResult Index() => View();
         public int PageSize = 4;
         public ViewResult Index(int productPage = 1)
             => View(new ProductListViewModel
