@@ -24,28 +24,62 @@ namespace DrinkStores.Models
                          Name = "Milk 100%",
                          Description = "Good Housekeeping:Goat Milk Nutrition - Health Benefits of Goat Milk",
                          Img = "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/health-benefits-of-goat-milk-1586900792.jpg?crop=0.668xw:1.00xh;0.259xw,0&resize=480:*",
-                         Price = 45.32m,
+                         Price = 45m,
                          Discount = 2.5,
-                         Status = "stocking"
+                         Status = "stocking",
+                         Category = "Milk"
                      },
                      new Product
                      {
-                         Name = "Coca cola",
-                         Description = "Nước ngọt Coca Cola 320ml",
-                         Img = "https://cdn.tgdd.vn/Products/Images/2443/76451/bhx/nuoc-ngot-coca-cola-330ml-201912091400292591.jpg",
-                         Price = 25.80m,
-                         Discount = 1.0,
-                         Status = "stocking"
+                         Name = "Soymilk",
+                         Description = "Everything you need to know about soy milk",
+                         Img = "https://img1.mashed.com/img/uploads/2017/05/soy-milk.jpg",
+                         Price = 45,
+                         Discount = 2.5,
+                         Status = "stocking",
+                         Category = "Milk"
                      },
                      new Product
                      {
                          Name = "Orange juice",
                          Description = "Fresh Squeezed Orange Juice",
                          Img = "https://www.earthfoodandfire.com/wp-content/uploads/2018/04/Homemade-Orange-Juice.jpg",
-                         Price = 48.90m,
+                         Price = 48,
                          Discount = 5.0,
-                         Status = "out of stock"
+                         Status = "out of stock",
+                         Category = "Juice"
+                     },
+                     new Product
+                     {
+                         Name = "Apple juice",
+                         Description = "So, What's the Difference Between Apple Cider and Apple Juice?",
+                         Img = "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/apple-cider-vs-apple-juice-difference-1565205829.jpg?crop=1.00xw:0.753xh;0,0.247xh&resize=1200:*",
+                         Price = 50,
+                         Discount = 0,
+                         Status = "out of stock",
+                         Category = "Juice"
+                     },
+                     new Product
+                     {
+                         Name = "Barley milk",
+                         Description = "Barley milk is the latest alternative milk",
+                         Img = "https://stylesatlife.com/wp-content/uploads/2018/12/Uses-of-Barley-Water-During-Pregnancy-1.jpg",
+                         Price = 45,
+                         Discount = 2.5,
+                         Status = "stocking",
+                         Category = "Milk"
+                     },
+                     new Product
+                     {
+                         Name = "Watermelon juice",
+                         Description = "How to Make Our Easy Watermelon Juice Recipe",
+                         Img = "https://www.tasteofhome.com/wp-content/uploads/2019/04/watermelon-juice-shutterstock_285112223.jpg",
+                         Price = 48,
+                         Discount = 5.0,
+                         Status = "out of stock",
+                         Category = "Juice"
                      }
+
                 );
                 context.SaveChanges();
             }
