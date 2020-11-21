@@ -18,19 +18,6 @@ namespace DrinkStores.Models
             {
                 context.Database.Migrate();
             }
-            if (!context.Category.Any())
-            {
-                context.Category.AddRange(
-                    new Category
-                    {
-                        CategoryName = "Milk"
-                    },
-                    new Category
-                    {
-                        CategoryName = "Juice"
-                    }
-                    );
-            }
 
             if (!context.Products.Any())
             {
@@ -43,7 +30,7 @@ namespace DrinkStores.Models
                          Price = 45m,
                          Discount = 2.5,
                          Status = "stocking",
-                         CategoryID = 1
+                         Category = "Milk"
                      },
                      new Product
                      {
@@ -53,7 +40,7 @@ namespace DrinkStores.Models
                          Price = 45,
                          Discount = 2.5,
                          Status = "stocking",
-                         CategoryID = 1
+                         Category = "Milk"
                      },
                      new Product
                      {
@@ -63,7 +50,7 @@ namespace DrinkStores.Models
                          Price = 48,
                          Discount = 5.0,
                          Status = "out of stock",
-                         CategoryID = 2
+                         Category = "Juice"
                      },
                      new Product
                      {
@@ -73,7 +60,7 @@ namespace DrinkStores.Models
                          Price = 48,
                          Discount = 5.0,
                          Status = "out of stock",
-                         CategoryID = 2
+                         Category = "Juice"
                      },
                      new Product
                      {
@@ -83,7 +70,17 @@ namespace DrinkStores.Models
                          Price = 45,
                          Discount = 2.5,
                          Status = "stocking",
-                         CategoryID = 1
+                         Category = "Milk"
+                     },
+                     new Product
+                     {
+                         Name = "Orange juice",
+                         Description = "Fresh Squeezed Orange Juice",
+                         Img = "https://www.earthfoodandfire.com/wp-content/uploads/2018/04/Homemade-Orange-Juice.jpg",
+                         Price = 48,
+                         Discount = 5.0,
+                         Status = "out of stock",
+                         Category = "Juice"
                      }
 
                 );

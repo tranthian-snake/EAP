@@ -17,7 +17,6 @@ namespace DrinkStores.Models
         public decimal Price { get; set; }
         public double Discount { get; set; }
         public string Status { get; set; }
-        public int? CategoryID { get; set; }
-        public virtual Category Category { get; set; }
+        public string Category { get; set; }
     }
 }
