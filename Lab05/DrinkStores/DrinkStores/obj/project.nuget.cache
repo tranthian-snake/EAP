@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "VvsCYNdfL37386wfPfCNDvnuefNxcRIH3nU9NFn9jTzZtxDsh09iT6yv+J1AM4QqGmH0dRrvy/B0eVu0hEbonA==",
+  "dgSpecHash": "OCRMfLmwbpuWG/IyvZUVJlYCZJR4oHVPD0hoKXm58NPf2y5CqDlx3JYON5sgrn51Z9IAthcmgllrwoPcXhzLSA==",
   "success": true,
-  "projectFilePath": "D:\\Visual Studio 2019\\EAP\\DrinkStores\\DrinkStores\\DrinkStores.csproj",
+  "projectFilePath": "D:\\Visual Studio 2019\\EAP\\EAP\\Lab05\\DrinkStores\\DrinkStores\\DrinkStores.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Tran Thi An\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Tran Thi An\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
