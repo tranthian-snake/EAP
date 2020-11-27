@@ -81,26 +81,6 @@ namespace DrinkStores.Models
                          Discount = 5.0,
                          Status = "out of stock",
                          Category ="Juice"
-                     },
-                     new Product
-                     {
-                         Name = "Lemonade",
-                         Description = "What is Italian Lemonade ? -Bentley's Roast Beef",
-                         Img = "https://bentleysroastbeef.com/wp-content/uploads/2019/08/italian-lemonade-1400x933.jpg",
-                         Price = 48,
-                         Discount = 5.0,
-                         Status = "stocking",
-                         Category = "Juice"
-                     },
-                     new Product
-                     {
-                         Name = "Pineapple juice",
-                         Description = "Pineapple Juice Recipe",
-                         Img = "https://media.healthplus.vn/thumb_x650x382/Images/Uploaded/Share/2018/05/28/nuoc-dua-thanh-loc-co-the-ngay-he11527560591.PNG",
-                         Price = 48,
-                         Discount = 5.0,
-                         Status = "stocking",
-                         Category = "Juice"
                      }
 
                 );
