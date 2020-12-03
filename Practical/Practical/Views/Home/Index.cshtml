@@ -3,9 +3,9 @@
     @foreach (var p in Model.Employees)
     {
 <div>
-    <h3>@p.firstName @p.lastName</h3>
-    <h5>@p.Gender</h5>
-    <h4>@p.Salary.ToString("c")</h4>
+    <h3>Name: @p.firstName @p.lastName</h3>
+    <p>Gender: @p.Gender</p>
+    <h6>Salary: @p.Salary.ToString("c")</h6>
 </div>
     }
     <div page-model="Model.PagingInfo" page-action="Index"></div>
