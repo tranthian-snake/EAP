@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
-
+using System.Threading.Tasks;
 
 namespace Practical.Models
 {
@@ -13,8 +12,9 @@ namespace Practical.Models
     {
         public static void EnsurePopulated(IApplicationBuilder app)
         {
-            EmployeeDbContext context = app.ApplicationServices.CreateScope().ServiceProvider.GetRequiredService<EmployeeDbContext>();
-            if (context.Database.GetAppliedMigrations().Any())
+            EmployeeDbContext context = app.ApplicationServices
+                .CreateScope().ServiceProvider.GetRequiredService<EmployeeDbContext>();
+            if (context.Database.GetPendingMigrations().Any())
             {
                 context.Database.Migrate();
             }
