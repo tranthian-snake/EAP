@@ -26,8 +26,15 @@ using Practical.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 4 "D:\Visual Studio 2019\EAP\EAP\Practical\Practical\Views\_ViewImports.cshtml"
+using Practical.Models.ViewModels;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"d6a5625cc8fb4476f348b0fe9041c550465d8bf9", @"/Views/Shared/Error.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"011c8ead590879e7516c45ded71f5cd3e84b587e", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"d408eda78e0103d0fa4d1c8d9e5b7086911d186e", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared_Error : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<ErrorViewModel>
     {
         #pragma warning disable 1998

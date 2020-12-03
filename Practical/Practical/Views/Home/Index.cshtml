@@ -1,10 +1,11 @@
-﻿model IQueryable<Product>
+﻿@model ProductListViewModel
 
-    @foreach (var p in Model)
+    @foreach (var p in Model.Employees)
     {
-        <div>
-            <h3>@p.firstName @p.lastName</h3>
-            <h5>@p.Gender</h5>
-            <h4>@p.Salary.ToString("c")</h4>
-        </div>
+<div>
+    <h3>@p.firstName @p.lastName</h3>
+    <h5>@p.Gender</h5>
+    <h4>@p.Salary.ToString("c")</h4>
+</div>
     }
+    <div page-model="Model.PagingInfo" page-action="Index"></div>

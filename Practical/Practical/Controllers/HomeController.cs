@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Practical.Models;
+using Practical.Models.ViewModels;
 
 namespace Practical.Controllers
 {
@@ -17,9 +18,19 @@ namespace Practical.Controllers
             repository = repo;
         }
         public int PageSize = 4;
-        public ViewResult Index(int productPage = 1) => View(repository.Employees
-                    .OrderBy(p => p.Id)
-                    .Skip((productPage - 1) * PageSize)
-                    .Take(PageSize));
+        public ViewResult Index(int productPage = 1)
+            => View(new ProductListViewModel
+            {
+                Employees = repository.Employees
+                .OrderBy(p => p.Id)
+                .Skip((productPage - 1) * PageSize)
+                .Take(PageSize),
+                PagingInfo = new PagingInfo
+                {
+                    CurrentPage = productPage,
+                    ItemsPerPage = PageSize,
+                    TotalItems = repository.Employees.Count()
+                }
+            });
     }
 }
